@@ -22,8 +22,7 @@
         "chai": "^4.2.0",
         "esm": "^3.2.16",
         "http-server": "^14.1.0",
-        "mocha": "^10.0.0",
-        "puppeteer": "^1.13.0"
+        "mocha": "^10.0.0"
     },
     "dependencies": {
         "bouture": "github:davidbruant/bouture",
