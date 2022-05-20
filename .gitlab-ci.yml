@@ -1,0 +1,38 @@
+# This file is a template, and might need editing before it works on your project.
+# Full project: https://gitlab.com/pages/plain-html
+
+image: node:11
+
+test:
+    script:
+        - npm install
+        - npm run unit
+
+pages:
+    stage: deploy
+    script:
+        - rm -Rf modules
+        - mkdir .$CI_BUILD_REF_NAME
+        - cp -r * .$CI_BUILD_REF_NAME
+        - cd .$CI_BUILD_REF_NAME
+        - npm install --only=prod
+        - mv ./node_modules ./modules
+        - cd -
+        - git fetch
+        - git checkout master
+        - git reset --hard origin/master
+        - npm install --only=prod
+        - npm audit fix
+        - mv ./node_modules ./modules
+        - mkdir .public
+        - cp -r * .public
+        - mv .public public
+        - mv .$CI_BUILD_REF_NAME public/$CI_BUILD_REF_NAME
+        - ls public/$CI_BUILD_REF_NAME
+
+    artifacts:
+        paths:
+            - public
+    only:
+        - master
+        - merge_requests
