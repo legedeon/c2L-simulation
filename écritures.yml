@@ -1,17 +1,25 @@
 factures:
   dev:
-    # Factures émises
-    # - pièce: numéro de facture
-      # structure: nom de la structure
-      # projet: nom du projet
-      # émise: c'est la date à laquelle on pense être payé (on est tjrs dans le turfu)
-      # montant: TTC
-    - pièce: 472
-      structure: Malt
-      projet: aide territoire
-      émise: 2022-05-10
-      montant: 0
-  
+    - pièce: 1
+      projet: recettes
+      émise: 2022-06-05
+      montant: 4000
+
+    - pièce: 1
+      projet: recettes
+      émise: 2022-06-12
+      montant: 4000
+
+    - pièce: 1
+      projet: recettes
+      émise: 2022-06-19
+      montant: 4000
+
+    - pièce: 1
+      projet: recettes
+      émise: 2022-06-26
+      montant: 4000
+
   # Factures prévues
     #- structure: AVH
       # projet: Studio Paon
@@ -21,22 +29,27 @@ factures:
 
 dépenses:
   # Factures prévues en sous-traitance
+  achat:
+    - compte: meubles
+      structure: adova
+      prévue: 2022-06-27
+      montant: -4395
+    - compte: meubles
+      structure: adova
+      prévue: 2022-06-10
+      montant: -1318
+
+    - compte: eau
+      structure: veolia
+      prévue: 2022-07-27
+      montant: -800
+
   sous-traitance:
     - compte: sous-traitants
       structure: navarro
       projet: constructions metalliques
-      prévue: 2022-05-25
+      prévue: 2022-06-10
       montant: -720
-    - compte: sous-traitants
-      structure: provence marrée
-      projet: poissons
-      prévue: 2022-05-25
-      montant: -200
-    - compte: sous-traitants
-      structure: episaveurs
-      projet: consommable
-      prévue: 2022-05-25
-      montant: -600
     - compte: sous-traitants
       structure: cafés richard
       projet: consommable
@@ -45,8 +58,8 @@ dépenses:
     - compte: sous-traitants
       structure: france boissons
       projet: boissons
-      prévue: 2022-05-31
-      montant: -3420
+      prévue: 2022-06-25
+      montant: -1710
     - compte: sous-traitants
       structure: csp france
       projet: caisse
@@ -113,78 +126,79 @@ dépenses:
       prévue: 2022-05-31
       montant: -587
 
-  capital:
-    - compte: stéphane
-      montant: -0
-      prévue: 2022-05-28
+  tva:
+    - compte: tva
+      montant: 766
+      prévue: 2022-06-28
 
 chargesFixes:
+  # en attendant de faire une section recettesFixes 
+  recettes:
+    - compte: recettes
+      montant: 16000
+      jour-de-prélèvement: 1
+
+  frais:
+    - compte: achat
+      montant: -6000
+      jour-de-prélèvement: 1
+
   salaires:
     - compte: patrice
       montant: -2000
-      jour-de-prélèvement: 1
-    
+      jour-de-prélèvement: 5
+    - compte: Pierre
+      montant: -2000
+      jour-de-prélèvement: 5
+
   comptabilité:
-    - compte: audies
-      montant: -0
+    - compte: compta + salaires
+      montant: -300
       jour-de-prélèvement: 1
 
   organismes:
     # on va mettre tout ça à jour avec une itw avec Béatrice semaine du 7 janvier
     - compte: urssaf
-      montant: -2000
-      jour-de-prélèvement: 17
-    - compte: april complémentaire
-      montant: -0
+      montant: -2300
+      jour-de-prélèvement: 20
+    - compte: colona complémentaire
+      montant: -120
       jour-de-prélèvement: 28
     - compte: klesia retraite
-      montant: -0    
-    - compte: malakoff prevoyance retraite
-      montant: -0
+      montant: -1200   
       jour-de-prélèvement: 25
     - compte: Prélèvement À la Source
       montant: -0
       jour-de-prélèvement: 17
 
+  edf:
+    - compte: edf
+      montant: -800
+      jour-de-prélèvement: 29
+    - compte: engie
+      montant: -300
+      jour-de-prélèvement: 29
+
   télécom:
-    - compte: ovh
-      montant: -0
+    - compte: orange
+      montant: -41
       jour-de-prélèvement: 27
 
   divers:
     - compte: assurance
-      # -333,60 € en 2021
-      montant: -0
-      jour-de-prélèvement: 28
+      montant: -200
+      jour-de-prélèvement: 2
     - compte: banque (abonnement)
-      montant: -0
+      montant: -40
       jour-de-prélèvement: 28
-    - compte: banque
-      montant: -0
-      jour-de-prélèvement: 28
-    - compte: commission
-      # 1000 pour l'année 2021 (soit 0,1%)
-      montant: 0
-      jour-de-prélèvement: 28
-    - compte: domiciliation
-      # domiciliation de l'entreprise (boite postale)
-      montant: 0
-      jour-de-prélèvement: 28
-
-  frais:
-    - compte: tous
-      montant: -0
-      jour-de-prélèvement: 28
+    - compte: prêt
+      montant: -4385
+      jour-de-prélèvement: 2
+    - compte: loyer
+      montant: -3500
+      jour-de-prélèvement: 10
 
 divers:
   solde-bancaire:
     - compte: banque
-      montant: 4000
-    - compte: livret
-      montant: 0
-
-  dettes:
-    # Ici on note les dettes que l'on a
-    # Genre on a facturé en avance à un ministère
-    - projet: brutdethé
-      montant: -0
+      montant: 7114
