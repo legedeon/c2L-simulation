@@ -1,6 +1,6 @@
 # pourquoi simulation ?
 
-Pour voir où la trésorerie de scopyleft nous amène
+Pour voir où la trésorerie de C2L nous amène
 
 Le solde bancaire ne reflète pas notre situation réelle, simulation permet de se rendre compte de notre situation à jour et pour les mois à venir
 
@@ -17,7 +17,7 @@ Les charges annuelles on été ramenées au mois
 
 ### les factures
 
-Liste des factures que scopyleft adressent aux partenaires (clients)
+Liste des factures que C2L adressent aux partenaires (clients)
 
 #### en cours
 
@@ -41,11 +41,14 @@ les factures récemment réglées, la TVA n'a pas encore été reversée à l'é
 
 ## comment actualiser les écritures
 
-à documenter
+[écritures](https://github.com/legedeon/c2L-simulation/blob/main/%C3%A9critures.yml)
 
-### grammaire des fichiers yaml
-
-à documenter
+On peut faire des copier/coller  
+On supprime simplement les écritures qui sont réglées  
+Les dates renseignées correspondent toujours à la prévision de règlement  
+Les écritures avec des dates antérieures à la date du jour sont ignorées  
+Les charges fixes sont récurentes  
+Pour l'instant la TVA estimées est de 20% sur l'ensemble des factures clients et recettes  
 
 ### glossaire
 
